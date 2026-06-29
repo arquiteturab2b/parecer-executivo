@@ -78,7 +78,235 @@ p{color:rgba(14,17,22,.68)}
 .faq{display:grid;gap:14px}details{border:1px solid var(--line);background:rgba(255,255,255,.74);border-radius:16px;overflow:hidden}summary{cursor:pointer;list-style:none;padding:22px 58px 22px 24px;font-family:var(--serif);font-size:clamp(22px,2.6vw,30px);line-height:1.06;color:var(--graphite);position:relative}summary::-webkit-details-marker{display:none}summary::after{content:"+";position:absolute;right:24px;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;border:1px solid var(--bronze-line);color:var(--bronze);display:grid;place-items:center;font-family:var(--sans);font-size:16px;font-weight:700}details[open] summary::after{content:"–"}.faq-body{border-top:1px solid var(--line);padding:20px 24px 24px;color:rgba(14,17,22,.68)}
 .cta-section{background:linear-gradient(90deg,rgba(246,246,244,.040) 1px,transparent 1px),linear-gradient(180deg,rgba(246,246,244,.032) 1px,transparent 1px),linear-gradient(135deg,var(--graphite) 0%,#111720 100%);background-size:76px 76px,76px 76px,auto;color:var(--offwhite);padding:clamp(70px,9vw,118px) 0;border-bottom:1px solid rgba(246,246,244,.10)}.cta-section h2{color:var(--offwhite);max-width:760px;margin-bottom:22px}.cta-section p{color:rgba(246,246,244,.66);max-width:760px;margin-bottom:16px}.cta-note{margin-top:18px;color:rgba(246,246,244,.48);font-size:12px;max-width:640px}
 .footer{background:var(--graphite);color:rgba(246,246,244,.42);border-top:1px solid rgba(246,246,244,.10);padding:26px 0}.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:22px;font-size:11px;letter-spacing:.12em;text-transform:uppercase}.footer-inner strong{color:var(--bronze-2);font-weight:600}
+
+/* Asset slots estratégicos — placeholders temporários premium */
+.asset-slot{
+  position:relative;
+  border:1px solid var(--bronze-line);
+  border-radius:calc(var(--radius) + 4px);
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 18% 22%,rgba(184,134,72,.12),transparent 16rem),
+    radial-gradient(circle at 82% 78%,rgba(13,56,76,.12),transparent 18rem),
+    rgba(255,255,255,.58);
+  box-shadow:0 1px 0 rgba(255,255,255,.72) inset;
+}
+.dark .asset-slot{
+  background:
+    radial-gradient(circle at 18% 22%,rgba(184,134,72,.15),transparent 16rem),
+    radial-gradient(circle at 82% 78%,rgba(13,56,76,.28),transparent 18rem),
+    rgba(246,246,244,.045);
+  border-color:rgba(184,134,72,.30);
+  box-shadow:none;
+}
+.asset-slot img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+.asset-placeholder{
+  position:relative;
+  min-height:260px;
+  padding:28px;
+  display:grid;
+  align-content:center;
+  gap:18px;
+  overflow:hidden;
+}
+.asset-placeholder::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,rgba(184,134,72,.13) 1px,transparent 1px),
+    linear-gradient(180deg,rgba(184,134,72,.10) 1px,transparent 1px);
+  background-size:34px 34px;
+  opacity:.44;
+  pointer-events:none;
+}
+.asset-placeholder::after{
+  content:"";
+  position:absolute;
+  inset:18px;
+  border:1px solid rgba(184,134,72,.16);
+  border-radius:18px;
+  pointer-events:none;
+}
+.asset-placeholder > *{
+  position:relative;
+  z-index:1;
+}
+.asset-placeholder-kicker{
+  display:inline-flex;
+  width:max-content;
+  border:1px solid var(--bronze-line);
+  border-radius:999px;
+  padding:7px 11px;
+  color:var(--bronze);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+.asset-placeholder-title{
+  font-family:var(--serif);
+  font-size:clamp(27px,3.4vw,42px);
+  line-height:1;
+  color:var(--graphite);
+  font-weight:500;
+}
+.dark .asset-placeholder-title{color:var(--offwhite)}
+.asset-placeholder-note{
+  max-width:560px;
+  color:rgba(14,17,22,.58);
+  font-size:13px;
+}
+.dark .asset-placeholder-note{color:rgba(246,246,244,.56)}
+.asset-blueprint{
+  margin-top:34px;
+  max-width:880px;
+}
+.blueprint-map{
+  min-height:150px;
+  position:relative;
+  border-top:1px solid rgba(184,134,72,.26);
+  border-bottom:1px solid rgba(184,134,72,.18);
+}
+.blueprint-node{
+  position:absolute;
+  width:14px;
+  height:14px;
+  border-radius:50%;
+  background:var(--bronze);
+  box-shadow:0 0 0 8px rgba(184,134,72,.12);
+}
+.blueprint-node.n1{left:8%;top:22%}
+.blueprint-node.n2{left:36%;top:62%}
+.blueprint-node.n3{left:64%;top:30%}
+.blueprint-node.n4{right:8%;bottom:24%}
+.blueprint-line{
+  position:absolute;
+  height:1px;
+  background:linear-gradient(90deg,rgba(184,134,72,.18),rgba(184,134,72,.72),rgba(184,134,72,.18));
+  transform-origin:left center;
+}
+.blueprint-line.l1{left:10%;top:31%;width:30%;transform:rotate(24deg)}
+.blueprint-line.l2{left:38%;top:67%;width:30%;transform:rotate(-28deg)}
+.blueprint-line.l3{left:65%;top:36%;width:26%;transform:rotate(25deg)}
+.asset-sintoma-causa,
+.asset-direcao-ferramenta,
+.asset-matriz-leitura{
+  margin-top:30px;
+}
+.sintoma-causa-map{
+  display:grid;
+  grid-template-columns:1fr 64px 1fr;
+  gap:18px;
+  align-items:stretch;
+}
+.map-column{
+  display:grid;
+  gap:10px;
+}
+.map-chip{
+  border:1px solid rgba(184,134,72,.22);
+  border-radius:999px;
+  padding:10px 12px;
+  background:rgba(255,255,255,.36);
+  color:rgba(14,17,22,.68);
+  font-size:12px;
+  line-height:1.25;
+}
+.dark .map-chip{
+  background:rgba(246,246,244,.045);
+  color:rgba(246,246,244,.66);
+}
+.map-connector{
+  display:grid;
+  place-items:center;
+  color:var(--bronze);
+  font-size:22px;
+  opacity:.78;
+}
+.direction-map{
+  min-height:250px;
+  position:relative;
+  display:grid;
+  place-items:center;
+}
+.direction-core{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  border:1px solid rgba(184,134,72,.58);
+  background:radial-gradient(circle,rgba(184,134,72,.18),rgba(184,134,72,.04));
+  display:grid;
+  place-items:center;
+  color:var(--offwhite);
+  font-family:var(--serif);
+  font-size:32px;
+}
+.direction-tool{
+  position:absolute;
+  border:1px solid rgba(184,134,72,.28);
+  border-radius:999px;
+  padding:8px 11px;
+  background:rgba(246,246,244,.06);
+  color:rgba(246,246,244,.66);
+  font-size:11px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.direction-tool.t1{top:14%;left:8%}
+.direction-tool.t2{top:10%;right:12%}
+.direction-tool.t3{left:4%;bottom:18%}
+.direction-tool.t4{right:6%;bottom:16%}
+.direction-tool.t5{top:46%;left:0}
+.direction-tool.t6{top:46%;right:0}
+.asset-matrix-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:1px;
+  background:rgba(184,134,72,.22);
+  border:1px solid rgba(184,134,72,.24);
+  border-radius:18px;
+  overflow:hidden;
+}
+.asset-matrix-cell{
+  min-height:104px;
+  display:grid;
+  align-content:center;
+  gap:8px;
+  padding:18px;
+  background:rgba(255,255,255,.48);
+}
+.asset-matrix-cell span{
+  color:var(--bronze);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.asset-matrix-cell strong{
+  color:var(--graphite);
+  font-size:14px;
+  line-height:1.25;
+}
+
 @media(max-width:980px){.hero,.hero-inner{min-height:auto}.hero-meta,.section-header,.grid-2,.grid-3{grid-template-columns:1fr}.hero-meta{background:transparent;gap:10px}.hero-meta-item{border:1px solid rgba(246,246,244,.12)}}
+
+@media(max-width:700px){
+  .asset-blueprint{max-width:none}
+  .asset-placeholder{min-height:220px;padding:22px}
+  .sintoma-causa-map{grid-template-columns:1fr;gap:12px}
+  .map-connector{min-height:24px;transform:rotate(90deg)}
+  .direction-map{min-height:320px}
+  .direction-core{width:132px;height:132px;font-size:28px}
+  .direction-tool{position:static;justify-self:center;margin:5px 0}
+  .asset-matrix-grid{grid-template-columns:1fr}
+  .asset-matrix-cell{min-height:auto}
+}
+
 @media(max-width:700px){body{padding-top:104px}.topbar-inner{width:min(100% - 28px,1180px);min-height:104px;display:grid;grid-template-columns:1fr;align-content:center;gap:10px;padding:10px 0}.topbar-label{display:grid;gap:5px}.topbar-divider{display:none}.topbar-title{white-space:normal;overflow:visible;text-overflow:clip;line-height:1.35}.topbar-cta{width:100%;min-height:42px}.container{width:min(100% - 28px,1020px)}.brand-signature{min-width:0;grid-template-columns:42px auto;gap:12px}.brand-mark{width:42px;height:42px}.brand-name{font-size:13px;letter-spacing:.22em}.brand-tagline{font-size:8px;letter-spacing:.22em}.hero-top,.hero-bottom,.footer-inner{flex-direction:column;align-items:flex-start}.value-seal{white-space:normal}.hero-center{padding:72px 0 42px}.actions{align-items:stretch;width:100%}.btn{width:100%;text-align:center}.card,.executive-card,.contrast-panel{padding:22px}.timeline-step{grid-template-columns:44px minmax(0,1fr);gap:14px;padding:18px}.timeline-step span{width:34px;height:34px}}
 </style>
 </head>
@@ -109,6 +337,26 @@ p{color:rgba(14,17,22,.68)}
         <a class="btn btn-primary" href="https://wa.me/5511988187221?text=Ol%C3%A1%2C%20quero%20entender%20melhor%20o%20Parecer%20Executivo%20de%20Mercado%20Digital%20e%20organizar%20minha%20pr%C3%B3xima%20decis%C3%A3o%20digital." target="_blank" rel="noopener noreferrer">Organizar minha próxima decisão digital</a>
         <a class="btn btn-secondary" href="https://wa.me/5511988187221?text=Ol%C3%A1%2C%20quero%20entender%20se%20o%20Parecer%20Executivo%20faz%20sentido%20para%20o%20momento%20da%20minha%20empresa." target="_blank" rel="noopener noreferrer">Entender se esta etapa faz sentido</a>
       </div>
+      <div class="asset-slot asset-blueprint" data-asset="A01_blueprint_decisao">
+        <!-- Inserir aqui a URL futura do asset A01: A01_blueprint_decisao_arquiteturab2b.svg -->
+        <!-- Substituição futura sugerida:
+        <img src="[URL_FINAL_A01]" alt="Blueprint de decisão da ArquiteturaB2B">
+        -->
+        <div class="asset-placeholder asset-placeholder-blueprint" role="img" aria-label="Placeholder visual premium do Blueprint de Decisão">
+          <span class="asset-placeholder-kicker">A01 · Blueprint de Decisão</span>
+          <strong class="asset-placeholder-title">Arquitetura antes da execução</strong>
+          <p class="asset-placeholder-note">Espaço reservado para o asset visual que reforça clareza, decisão e método antes da implantação.</p>
+          <div class="blueprint-map" aria-hidden="true">
+            <span class="blueprint-node n1"></span>
+            <span class="blueprint-node n2"></span>
+            <span class="blueprint-node n3"></span>
+            <span class="blueprint-node n4"></span>
+            <span class="blueprint-line l1"></span>
+            <span class="blueprint-line l2"></span>
+            <span class="blueprint-line l3"></span>
+          </div>
+        </div>
+      </div>
       <div class="hero-meta">
         <div class="hero-meta-item"><span>Promessa</span><strong>decidir melhor antes de executar.</strong></div>
         <div class="hero-meta-item"><span>Função</span><strong>valor; desejo; compreensão; posicionamento; argumento comercial; educação do cliente antes da formalização.</strong></div>
@@ -121,13 +369,76 @@ p{color:rgba(14,17,22,.68)}
 
 <section class="section"><div class="container"><div class="section-header"><div><p class="eyebrow">O problema não é só fazer mais</p><h2>Quando o digital está confuso, fazer mais nem sempre resolve.</h2></div><p class="lead">Quando uma empresa percebe que o digital não está funcionando como deveria, a reação mais comum é procurar uma nova execução.</p></div><article class="executive-card"><p class="statement">Um novo site. Uma nova campanha. Mais conteúdo. Mais tráfego. Uma automação. Um CRM. Uma nova agência. Um novo fornecedor.</p><div class="content-stack"><p>Mas, em muitos casos, a pergunta anterior ainda não foi respondida:</p><p>o que realmente precisa ser executado?</p><p>Antes de contratar uma solução, é preciso entender se o problema está na oferta, na comunicação, no posicionamento, na reputação, nos canais, no atendimento, na jornada ou na ausência de prioridades.</p></div></article></div></section>
 
-<section class="section kraft"><div class="container"><div class="section-header"><div><p class="eyebrow">O problema real</p><h2>Talvez o problema não seja o site. Nem o tráfego. Nem o Instagram.</h2></div><p class="lead">O problema pode não estar na próxima ferramenta.</p></div><div class="card-grid grid-2"><article class="card"><span class="card-number">01</span><h3>Sintomas que parecem execução</h3><ul class="clean-list"><li><span class="list-marker">1</span><span>Um site que não gera contato pode ser sintoma de uma oferta pouco clara.</span></li><li><span class="list-marker">2</span><span>Um Instagram que não converte pode ser sintoma de uma comunicação genérica.</span></li><li><span class="list-marker">3</span><span>Um tráfego pago que não funcionou pode ter levado pessoas para uma página sem mensagem forte.</span></li></ul></article><article class="card"><span class="card-number">02</span><h3>Sinais de falta de leitura</h3><ul class="clean-list"><li><span class="list-marker">1</span><span>Um e-commerce que não vende pode ter problemas de confiança, jornada, diferenciação ou percepção de valor.</span></li><li><span class="list-marker">2</span><span>Uma equipe que recebe mensagens no WhatsApp, mas não fecha, pode estar operando sem narrativa, sem critérios e sem prioridade.</span></li><li><span class="list-marker">3</span><span>Pode estar na falta de uma leitura que conecte presença digital, oferta, posicionamento, canais, reputação e prioridade.</span></li></ul></article></div></div></section>
+<section class="section kraft"><div class="container"><div class="section-header"><div><p class="eyebrow">O problema real</p><h2>Talvez o problema não seja o site. Nem o tráfego. Nem o Instagram.</h2></div><p class="lead">O problema pode não estar na próxima ferramenta.</p></div><div class="card-grid grid-2"><article class="card"><span class="card-number">01</span><h3>Sintomas que parecem execução</h3><ul class="clean-list"><li><span class="list-marker">1</span><span>Um site que não gera contato pode ser sintoma de uma oferta pouco clara.</span></li><li><span class="list-marker">2</span><span>Um Instagram que não converte pode ser sintoma de uma comunicação genérica.</span></li><li><span class="list-marker">3</span><span>Um tráfego pago que não funcionou pode ter levado pessoas para uma página sem mensagem forte.</span></li></ul></article><article class="card"><span class="card-number">02</span><h3>Sinais de falta de leitura</h3><ul class="clean-list"><li><span class="list-marker">1</span><span>Um e-commerce que não vende pode ter problemas de confiança, jornada, diferenciação ou percepção de valor.</span></li><li><span class="list-marker">2</span><span>Uma equipe que recebe mensagens no WhatsApp, mas não fecha, pode estar operando sem narrativa, sem critérios e sem prioridade.</span></li><li><span class="list-marker">3</span><span>Pode estar na falta de uma leitura que conecte presença digital, oferta, posicionamento, canais, reputação e prioridade.</span></li></ul></article></div>
+<div class="asset-slot asset-sintoma-causa" data-asset="A02_sintoma_causa">
+  <!-- Inserir aqui a URL futura do asset A02: A02_sintoma_causa_arquiteturab2b.svg -->
+  <!-- Substituição futura sugerida:
+  <img src="[URL_FINAL_A02]" alt="Diagrama de sintomas aparentes e causas estratégicas da ArquiteturaB2B">
+  -->
+  <div class="asset-placeholder" role="img" aria-label="Placeholder visual premium de Sintoma x Causa">
+    <span class="asset-placeholder-kicker">A02 · Sintoma x Causa</span>
+    <strong class="asset-placeholder-title">O visível nem sempre é a causa.</strong>
+    <div class="sintoma-causa-map" aria-hidden="true">
+      <div class="map-column">
+        <span class="map-chip">site não gera contato</span>
+        <span class="map-chip">Instagram não converte</span>
+        <span class="map-chip">tráfego não funcionou</span>
+      </div>
+      <div class="map-connector">→</div>
+      <div class="map-column">
+        <span class="map-chip">oferta pouco clara</span>
+        <span class="map-chip">comunicação genérica</span>
+        <span class="map-chip">mensagem sem força</span>
+      </div>
+    </div>
+  </div>
+</div></div></section>
 
-<section class="section dark"><div class="container"><div class="section-header"><div><p class="eyebrow">Reenquadramento</p><h2>Ferramentas não substituem direção.</h2></div><p class="lead">Um site pode ser necessário. Tráfego pode ser necessário. Conteúdo pode ser necessário. SEO, CRM e automação também podem ser necessários.</p></div><div class="contrast-panel"><div class="content-stack"><p>Mas nenhum desses movimentos deveria ser escolhido apenas porque parece ser o próximo passo óbvio.</p><p>Antes de executar, é preciso responder:</p><div class="card-grid grid-3"><ul class="clean-list"><li><span class="list-marker">1</span><span>qual é o gargalo real?</span></li><li><span class="list-marker">2</span><span>qual canal merece prioridade?</span></li><li><span class="list-marker">3</span><span>a comunicação atual transmite valor?</span></li></ul><ul class="clean-list"><li><span class="list-marker">4</span><span>a oferta está clara?</span></li><li><span class="list-marker">5</span><span>a reputação está sendo bem usada?</span></li><li><span class="list-marker">6</span><span>o problema é aquisição, conversão, confiança, posicionamento ou organização?</span></li></ul><ul class="clean-list"><li><span class="list-marker">7</span><span>o que deve ser feito agora, depois ou não agora?</span></li></ul></div></div><div class="quote-panel" style="margin-top:30px">O digital não precisa começar por ferramenta. Precisa começar por direção.</div></div></div></section>
+<section class="section dark"><div class="container"><div class="section-header"><div><p class="eyebrow">Reenquadramento</p><h2>Ferramentas não substituem direção.</h2></div><p class="lead">Um site pode ser necessário. Tráfego pode ser necessário. Conteúdo pode ser necessário. SEO, CRM e automação também podem ser necessários.</p></div><div class="contrast-panel"><div class="content-stack"><p>Mas nenhum desses movimentos deveria ser escolhido apenas porque parece ser o próximo passo óbvio.</p><p>Antes de executar, é preciso responder:</p><div class="card-grid grid-3"><ul class="clean-list"><li><span class="list-marker">1</span><span>qual é o gargalo real?</span></li><li><span class="list-marker">2</span><span>qual canal merece prioridade?</span></li><li><span class="list-marker">3</span><span>a comunicação atual transmite valor?</span></li></ul><ul class="clean-list"><li><span class="list-marker">4</span><span>a oferta está clara?</span></li><li><span class="list-marker">5</span><span>a reputação está sendo bem usada?</span></li><li><span class="list-marker">6</span><span>o problema é aquisição, conversão, confiança, posicionamento ou organização?</span></li></ul><ul class="clean-list"><li><span class="list-marker">7</span><span>o que deve ser feito agora, depois ou não agora?</span></li></ul></div></div>
+<div class="asset-slot asset-direcao-ferramenta" data-asset="A03_direcao_ferramenta">
+  <!-- Inserir aqui a URL futura do asset A03: A03_direcao_ferramenta_arquiteturab2b.svg -->
+  <!-- Substituição futura sugerida:
+  <img src="[URL_FINAL_A03]" alt="Diagrama de direção antes de ferramentas digitais da ArquiteturaB2B">
+  -->
+  <div class="asset-placeholder" role="img" aria-label="Placeholder visual premium de Direção antes de Ferramenta">
+    <span class="asset-placeholder-kicker">A03 · Direção antes de Ferramenta</span>
+    <strong class="asset-placeholder-title">Direção organiza a escolha da ferramenta.</strong>
+    <div class="direction-map" aria-hidden="true">
+      <span class="direction-tool t1">site</span>
+      <span class="direction-tool t2">tráfego</span>
+      <span class="direction-tool t3">conteúdo</span>
+      <span class="direction-tool t4">SEO</span>
+      <span class="direction-tool t5">CRM</span>
+      <span class="direction-tool t6">automação</span>
+      <div class="direction-core">Direção</div>
+    </div>
+  </div>
+</div><div class="quote-panel" style="margin-top:30px">O digital não precisa começar por ferramenta. Precisa começar por direção.</div></div></div></section>
 
 <section class="section"><div class="container"><div class="section-header"><div><p class="eyebrow">O que é o Parecer Executivo</p><h2>O que é o Parecer Executivo de Mercado Digital</h2></div><p class="lead">O Parecer Executivo de Mercado Digital é uma etapa consultiva de leitura, análise e priorização antes da implantação.</p></div><article class="executive-card"><div class="content-stack"><p>Ele organiza a visão sobre presença digital, comunicação, posicionamento, canais, reputação, oferta, riscos, oportunidades e próximos movimentos.</p><p>A entrega não é apenas um documento.</p><p>O documento final materializa uma etapa de leitura, entrevista, análise, organização de evidências, definição de prioridades e devolutiva executiva.</p></div><div class="quote-panel" style="margin-top:30px">A promessa não é vender mais. A promessa é decidir melhor.</div></article></div></section>
 
-<section class="section kraft"><div class="container"><div class="section-header"><div><p class="eyebrow">Leitura executiva</p><h2>O que entra na leitura executiva</h2></div><p class="lead">Cada negócio tem um contexto próprio. Por isso, o Parecer não parte de uma recomendação pronta.</p></div><p class="lead" style="margin-bottom:32px">Ele organiza uma leitura sobre os principais pontos que influenciam a decisão digital.</p><div class="card-grid grid-3">
+<section class="section kraft"><div class="container"><div class="section-header"><div><p class="eyebrow">Leitura executiva</p><h2>O que entra na leitura executiva</h2></div><p class="lead">Cada negócio tem um contexto próprio. Por isso, o Parecer não parte de uma recomendação pronta.</p></div><p class="lead" style="margin-bottom:32px">Ele organiza uma leitura sobre os principais pontos que influenciam a decisão digital.</p>
+<div class="asset-slot asset-matriz-leitura" data-asset="A04_matriz_leitura_executiva">
+  <!-- Inserir aqui a URL futura do asset A04: A04_matriz_leitura_executiva_arquiteturab2b.svg -->
+  <!-- Substituição futura sugerida:
+  <img src="[URL_FINAL_A04]" alt="Matriz de leitura executiva da ArquiteturaB2B">
+  -->
+  <div class="asset-placeholder" role="img" aria-label="Placeholder visual premium da Matriz de Leitura Executiva">
+    <span class="asset-placeholder-kicker">A04 · Matriz de Leitura Executiva</span>
+    <strong class="asset-placeholder-title">Nove pontos organizados em um sistema de decisão.</strong>
+    <div class="asset-matrix-grid" aria-hidden="true">
+      <div class="asset-matrix-cell"><span>01</span><strong>Presença digital</strong></div>
+      <div class="asset-matrix-cell"><span>02</span><strong>Comunicação</strong></div>
+      <div class="asset-matrix-cell"><span>03</span><strong>Posicionamento</strong></div>
+      <div class="asset-matrix-cell"><span>04</span><strong>Canais</strong></div>
+      <div class="asset-matrix-cell"><span>05</span><strong>Reputação</strong></div>
+      <div class="asset-matrix-cell"><span>06</span><strong>Oferta</strong></div>
+      <div class="asset-matrix-cell"><span>07</span><strong>Riscos</strong></div>
+      <div class="asset-matrix-cell"><span>08</span><strong>Oportunidades</strong></div>
+      <div class="asset-matrix-cell"><span>09</span><strong>Prioridades</strong></div>
+    </div>
+  </div>
+</div><div class="card-grid grid-3">
 <article class="card"><span class="card-number">01</span><h3>Presença digital atual</h3><p>Como a empresa aparece e é percebida nos canais públicos.</p></article>
 <article class="card"><span class="card-number">02</span><h3>Comunicação</h3><p>Se a mensagem transmite valor, clareza, diferenciação e confiança.</p></article>
 <article class="card"><span class="card-number">03</span><h3>Posicionamento</h3><p>Como o negócio está sendo apresentado para o mercado e para o cliente ideal.</p></article>
